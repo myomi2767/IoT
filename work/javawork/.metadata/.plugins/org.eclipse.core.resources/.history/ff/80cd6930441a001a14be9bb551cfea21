@@ -1,0 +1,10 @@
+package chap05;
+
+public class Array2DTest01 {
+	public static void main(String[] args) {
+		int[][] myarr = new int[2][3];
+		myarr[0][0] = 100;
+		myarr[1][1] = 200;
+	}
+
+}

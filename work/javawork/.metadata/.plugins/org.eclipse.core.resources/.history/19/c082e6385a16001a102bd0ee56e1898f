@@ -1,0 +1,16 @@
+package chap03;
+//기본형과 참조형 변수의 비교
+public class VariableTest {
+	public static void main(String[] args) {
+		//기본형변수
+		int i = 10;
+		int j = 10;
+		System.out.println("==========기본형===========");
+		if(i==j) {
+			System.out.println("기본형 같다.");
+		}else {
+			System.out.println("기본형 다르다.");
+		}
+	}
+
+}

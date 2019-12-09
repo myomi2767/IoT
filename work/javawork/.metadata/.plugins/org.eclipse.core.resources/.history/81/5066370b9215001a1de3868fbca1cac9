@@ -1,0 +1,9 @@
+package test.exam;
+
+public class TestExam {
+	public static void main(String[] args) {
+		int i = 10;
+		System.out.println("iÀÇ °ª=>"+i);
+	}
+
+}

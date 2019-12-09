@@ -1,0 +1,30 @@
+package chap04;
+
+import java.util.Scanner;
+
+public class IfExam02 {
+	public static void main(String[] args) {
+		Scanner key = new Scanner(System.in);
+		System.out.print("성별과 나이를 입력하세요 : ");
+		
+		int sex = key.nextInt();
+		int age = key.nextInt();
+		if(sex<=0 || sex>4) {
+			if(sex==1 || sex==3) {
+				if(age<=19) {
+					System.out.println("청소년남자");
+				}else {
+					System.out.println("성인남자");
+				}
+			}else {
+				if(age<=19) {
+					System.out.println("청소년여자");
+				}else {
+					System.out.println("성인여자");
+				}
+			
+			}
+		}
+	}
+
+}

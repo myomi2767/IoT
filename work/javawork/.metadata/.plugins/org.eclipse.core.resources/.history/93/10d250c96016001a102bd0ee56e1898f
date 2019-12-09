@@ -1,0 +1,12 @@
+package chap04;
+
+public class IfTest01 {
+	public static void main(String[] args) {
+		int num = 89;
+		if(num>=90)
+			System.out.println("만족");
+			System.out.println("두 번째 문장");
+		System.out.println("종료");
+	}
+
+}

@@ -1,0 +1,12 @@
+package chap04;
+
+import java.util.Scanner;
+
+public class ForExam02 {
+	public static void main(String[] args) {
+		Scanner key = new Scanner(System.in);
+		System.out.println("출력할 단 : ");
+		int gugu = key.nextInt();
+	}
+
+}

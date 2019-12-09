@@ -1,0 +1,17 @@
+package chap03;
+
+import java.util.Random;
+
+public class APIExam {
+	public static void main(String[] args) {
+		Random ran = new Random(101);
+		int result = ran.nextInt();
+		System.out.println("랜덤값=>"+result);
+
+		//0에서 100사이의 랜덤값 호출
+		result = ran.nextInt(101);
+		System.out.println(result);
+		
+	}
+
+}
