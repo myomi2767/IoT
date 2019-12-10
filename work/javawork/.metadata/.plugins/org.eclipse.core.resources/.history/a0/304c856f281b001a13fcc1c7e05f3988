@@ -1,0 +1,15 @@
+package workbook;
+
+public class AccountTest {
+	public static void main(String[] args) {
+		Account acc = new Account();
+		
+		acc.setAccount("441-0290-1203");
+		acc.setBalance(500000);
+		acc.setInterestRate(7.3);
+		
+		
+		
+		
+	}
+}

@@ -1,0 +1,16 @@
+package oop.chap06;
+//MyMethod클래서에서 정의한 메소드를 사용하는 클래스
+public class MyMethodTest {
+	public static void main(String[] args) {
+		System.out.println("*********프로그램 시작**********");
+		MyMethod m = new MyMethod();
+		//1. 매개변수가 없고 void인 메소드의 호출
+		m.display();
+		System.out.println("+++++++++++step1++++++++++");
+		m.display();
+		System.out.println("+++++++++++step2++++++++++");
+		m.display();
+		System.out.println("==========프로그램 종료==========");
+	}
+
+}

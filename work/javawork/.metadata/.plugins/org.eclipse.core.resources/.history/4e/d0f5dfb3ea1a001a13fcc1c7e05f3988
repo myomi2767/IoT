@@ -1,0 +1,8 @@
+package oop.chap06;
+//클래스를 정의하고 멤버변수를 정의하는 방법
+public class Person { //클래스 상단부에 정의
+	String name; //클래스의 특성을 나타내는 데이터 - 멤버변수 or 필드
+	//데이터 타입은 기본형, 참조형 모두 사용 가능
+	String addr;
+	int age;
+}

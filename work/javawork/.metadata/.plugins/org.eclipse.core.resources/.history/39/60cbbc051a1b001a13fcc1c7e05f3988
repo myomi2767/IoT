@@ -1,0 +1,60 @@
+package workbook;
+
+public class Student {
+	private String name;
+	private int korean;
+	private int english;
+	private int math;
+	private int science;
+	
+	public void setName(String name) {
+		this.name = name;	
+	}
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setKorean(int korean) {
+		this.korean = korean;	
+	}
+	public int getKorean() {
+		return this.korean;
+	}
+	
+	public void setEnglish(int english) {
+		this.english = english;	
+	}
+	public int getEnglish() {
+		return this.english;
+	}
+	
+	public void setMath(int math) {
+		this.math = math;	
+	}
+	public int getMath() {
+		return this.math;
+	}
+	
+	public void setScience(int science) {
+		this.science = science;	
+	}
+	public int getScience() {
+		return this.science;
+	}
+		
+	public void setAvg(int korean, int english, int math, int science) {
+		this.korean = korean;
+		this.english = english;
+		this.math = math;
+		this.science = science;	
+			
+	}
+	
+	public double getAvg() {
+		double avg=0.0;
+		avg = (double)(this.korean+this.english+this.math+this.science)/4;
+		return avg;
+	}
+	
+	
+}

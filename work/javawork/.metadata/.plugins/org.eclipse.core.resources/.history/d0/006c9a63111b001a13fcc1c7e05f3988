@@ -1,0 +1,11 @@
+package workbook;
+
+public class Test05 {
+	public static void main(String[] args) {
+		int num1 = Integer.parseInt(args[0]);
+		int num2 = Integer.parseInt(args[0]);
+		int num3 = Integer.parseInt(args[0]);
+		int num4 = Integer.parseInt(args[0]);
+	}
+
+}

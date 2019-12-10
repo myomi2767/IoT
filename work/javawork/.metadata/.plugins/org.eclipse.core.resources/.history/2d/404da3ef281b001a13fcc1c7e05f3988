@@ -1,0 +1,17 @@
+package workbook;
+
+public class AccountTest {
+	public static void main(String[] args) {
+		Account acc = new Account();
+		
+		acc.setAccount("441-0290-1203");
+		System.out.println("계좌정보: "+acc.getAccount()+" 현재잔액: "+acc.getBalance());
+		acc.deposit(20000);
+		System.out.println("계좌정보: "+acc.getAccount()+" 현재잔액: "+acc.getBalance());
+		acc.calculaterest();
+		
+		
+		
+		
+	}
+}

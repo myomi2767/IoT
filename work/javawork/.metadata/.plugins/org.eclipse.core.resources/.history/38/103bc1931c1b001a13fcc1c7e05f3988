@@ -1,0 +1,39 @@
+package workbook;
+
+public class Test06 {
+
+	public static void main(String[] args) {
+		Student[] s = new Student[3];
+		
+		for(int i=0;i<s.length;i++) {
+			s[i] = new Student();
+		}
+		
+		s[0].setName("Kim");
+		s[0].setKorean(100);
+		s[0].setEnglish(90);
+		s[0].setMath(95);
+		s[0].setScience(89);
+		
+		
+		s[1].setName("Lee");
+		s[1].setKorean(60);
+		s[1].setEnglish(70);
+		s[1].setMath(99);
+		s[1].setScience(98);
+		
+		s[2].setName("Park");
+		s[2].setKorean(68);
+		s[2].setEnglish(86);
+		s[2].setMath(60);
+		s[2].setScience(40);
+		
+		for(int i=0;i<s.length;i++) {
+			System.out.println(s[i].getName()+"Æò±Õ:"+s[i].getAvg()+"ÇÐÁ¡:"+s[i].getGrade());
+
+			
+		}
+		
+	}
+
+}

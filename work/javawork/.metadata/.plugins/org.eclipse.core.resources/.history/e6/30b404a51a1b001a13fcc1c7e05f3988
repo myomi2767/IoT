@@ -1,0 +1,74 @@
+package workbook;
+
+public class Student {
+	private String name;
+	private int korean;
+	private int english;
+	private int math;
+	private int science;
+	
+	public void setName(String name) {
+		this.name = name;	
+	}
+	public String getName() {
+		return this.name;
+	}
+	
+	public void setKorean(int korean) {
+		this.korean = korean;	
+	}
+	public int getKorean() {
+		return this.korean;
+	}
+	
+	public void setEnglish(int english) {
+		this.english = english;	
+	}
+	public int getEnglish() {
+		return this.english;
+	}
+	
+	public void setMath(int math) {
+		this.math = math;	
+	}
+	public int getMath() {
+		return this.math;
+	}
+	
+	public void setScience(int science) {
+		this.science = science;	
+	}
+	public int getScience() {
+		return this.science;
+	}
+	
+	public double getAvg() {
+		double avg=0.0;
+		avg = (double)(this.korean+this.english+this.math+this.science)/4;
+		return avg;
+	}
+		
+	public String getGrade() {
+		String str = new String();
+		double avg = getAvg();
+		if(avg>100 | avg<0) {
+			str = "잘못입력";
+		}else {
+			if(avg>=90) {
+				str = "A학점";
+			}else if(avg>=70) {
+				str = "B학점";
+			}else if(avg>=50) {
+				str = "c학점";
+			}else if(avg>=30) {
+				str = "D학점";
+			}else {
+				str = "f학점";
+			}
+		}
+		
+		return str;
+	}
+	
+	
+}
