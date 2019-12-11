@@ -1,0 +1,11 @@
+package oop.chap06;
+//메소드의 매개변수와 리턴타입으로 참조형, 배열, 기본형 모두 사용할 수 있다.
+public class MethodTest {
+	public static void main(String[] args) {
+		Person p = new Person("장동건","서울",45);
+	}
+	public static void display(String name,String addr,int age) {
+		System.out.println(name+","+addr+","+age);
+	}
+
+}

@@ -8,12 +8,21 @@ package oop.chap06;
 //   protected
 //   private
 //클래스를 정의할 때 멤버변수는 private으로 선언해서 외부에서 접근할 수 없도록 정보를 은닉하고 
-//public메소드를 통애허 접근할수 있도록 구현한다.
+//public메소드를 통해서 접근할 수 있도록 구현한다.
 public class Person { //클래스 상단부에 정의
 	private String name; //클래스의 특성을 나타내는 데이터 - 멤버변수 or 필드
 						 //데이터 타입은 기본형, 참조형 모두 사용 가능
 	private String addr;
 	private int age;
+	
+	public Person() {
+		
+	}
+	public Person(String name,String addr,int age) {
+		this.name = name;
+		this.addr = addr;
+		this.age = age;
+	}
 	
 	//모든 멤버변수는 private으로 선언되어 있기 때문에 값을 설정하는 메소드와 값을 가져올 수 있는 메소드가 필요하다.
 	//이런 역할을 하는 메소드를 정의하는 경우
@@ -47,6 +56,10 @@ public class Person { //클래스 상단부에 정의
 	
 	public int getAge() {
 		return this.age;
+	}
+	@Override
+	public String toString() {
+		return "Person [name=" + name + ", addr=" + addr + ", age=" + age + "]";
 	}
 	
 }

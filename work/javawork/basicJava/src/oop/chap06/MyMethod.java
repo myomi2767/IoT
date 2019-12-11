@@ -32,4 +32,10 @@ public class MyMethod {
 		}
 		System.out.println();
 	}
+	
+	public void display(int j, String str) {
+		
+	}
+	
+	
 }

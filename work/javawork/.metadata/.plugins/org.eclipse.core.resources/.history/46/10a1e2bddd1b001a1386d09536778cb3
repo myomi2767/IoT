@@ -1,0 +1,9 @@
+package oop.cahp07;
+//StaticDemo를 테스트하는 클래스
+public class StaticDemoTest {
+	public static void main(String[] args) {
+		StaticDemo obj1 = new StaticDemo("obj1");
+		obj1.display();
+	}
+
+}

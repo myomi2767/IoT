@@ -5,6 +5,16 @@ public class Account {
 	private int balance;
 	private double interestRate;
 	
+	public Account() {
+		
+	}
+	
+	public Account(String account,int balance,double interestRate) {
+		this.account = account;
+		this.balance = balance;
+		this.interestRate = interestRate;
+	}
+	
 	public void setAccount(String account) {
 		this.account=account;
 	}
@@ -23,16 +33,20 @@ public class Account {
 		this.interestRate=interestRate;
 	}
 	
-	public double calculaterest() {
-		double result = this.balance*this.interestRate/100;
+	public double getInterestRate() {
+		return interestRate;
+	}
+	
+	public double calculateInterest() {
+		double result = balance*interestRate/100;
 		return result;
 	}
 	
 	public void deposit(int money) {
-		this.balance += money;
+		balance += money;
 	}
 	
 	public void withdraw(int money) {
-		this.balance -= money;
+		balance -= money;
 	}
 }

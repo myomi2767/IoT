@@ -1,0 +1,13 @@
+package oop.chap06.constructor;
+
+public class MyConstructorTest {
+	public static void main(String[] args) {
+		MyConstructor obj = new MyConstructor();
+		obj.setName("¿Âµø∞«");
+		obj.setId("jang");
+		obj.setPass("1234");
+		
+		System.out.println(obj.getName()+","+obj.getId()+","+obj.getPass());
+	}
+
+}

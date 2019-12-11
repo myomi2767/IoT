@@ -1,0 +1,11 @@
+package oop.cahp07;
+
+public class StaticMethodDemoTest {
+	public static void main(String[] args) {
+		//API의 static 메소드 접근하기
+		//=> static멤버는 인스턴스의 소유가 아니므로 무조건 클래스명으로 접근한다.
+		System.out.println(Math.PI);
+		System.out.println(Math.random());
+	}
+
+}

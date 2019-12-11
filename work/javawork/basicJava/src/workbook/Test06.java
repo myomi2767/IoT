@@ -27,8 +27,8 @@ public class Test06 {
 		s3.setScience(40);
 		
 		System.out.println(s1.getName()+"Æò±Õ:"+s1.getAvg()+"ÇÐÁ¡:"+s1.getGrade());
-		System.out.println(s1.getName()+"Æò±Õ:"+s2.getAvg()+"ÇÐÁ¡:"+s2.getGrade());
-		System.out.println(s1.getName()+"Æò±Õ:"+s3.getAvg()+"ÇÐÁ¡:"+s3.getGrade());
+		System.out.println(s2.getName()+"Æò±Õ:"+s2.getAvg()+"ÇÐÁ¡:"+s2.getGrade());
+		System.out.println(s3.getName()+"Æò±Õ:"+s3.getAvg()+"ÇÐÁ¡:"+s3.getGrade());
 		
 	}
 

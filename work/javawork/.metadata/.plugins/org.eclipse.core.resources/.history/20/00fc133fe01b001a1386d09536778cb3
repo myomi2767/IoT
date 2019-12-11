@@ -1,0 +1,10 @@
+package oop.cahp07;
+
+public class StaticMethodDemoTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
