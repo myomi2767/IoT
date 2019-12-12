@@ -1,0 +1,16 @@
+package oop.cahp07;
+/*
+ * <<상속관계에서 생성자가 갖는 특징>>
+ * 
+*/
+class SuperA{
+	
+}
+class SubB extends SuperA{
+	
+}
+public class InheritanceTest03 {
+	public static void main(String[] args) {
+		
+	}
+}

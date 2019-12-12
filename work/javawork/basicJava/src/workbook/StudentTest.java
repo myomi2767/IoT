@@ -7,8 +7,7 @@ public class StudentTest {
 		int sumWeight = 0;
 		
 		Student02 StudentArray[] = new Student02[3];
-		
-		
+			
 		StudentArray[0] = new Student02("홍길동", 15, 171, 81);
 		StudentArray[1] = new Student02("한사람", 13, 183, 72);
 		StudentArray[2] = new Student02("임걱정", 16, 175, 65);
@@ -16,13 +15,12 @@ public class StudentTest {
 		System.out.println("이름\t나이\t신장\t몸무게");
 		for (int i = 0; i < StudentArray.length; i++) {
 			StudentArray[i].print();
-		}
-		System.out.println();
-		for (int i = 0; i < StudentArray.length; i++) {
 			sumAge += StudentArray[i].getAge();
 			sumHeight += StudentArray[i].getHeight();
 			sumWeight += StudentArray[i].getWeight();
 		}
+		System.out.println();
+
 		System.out.println("나이의 평균: "+(double)sumAge/StudentArray.length);
 		System.out.println("신장의 평균: "+(double)sumHeight/StudentArray.length);
 		System.out.println("몸무게의 평균: "+(double)sumWeight/StudentArray.length);

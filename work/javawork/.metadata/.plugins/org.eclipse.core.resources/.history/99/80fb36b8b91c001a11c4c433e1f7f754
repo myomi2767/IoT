@@ -1,0 +1,32 @@
+package workbook;
+
+public class Otab extends Mobile{
+	Otab(){
+		
+	}
+	Otab(String mobileName, int batterySize, String osType){
+		super(mobileName,batterySize,osType);
+	}
+	
+	/*public int operate(int time) {
+		setBatterySize(getBatterySize()-time*12);
+		return getBatterySize();
+	}*/
+	
+	public int operate(int time) {
+		int result = getBatterySize()-time*12;
+		return result;
+	}
+	
+	/*public int charge(int time) {
+		setBatterySize(getBatterySize()+time*8);
+		return getBatterySize();
+	}*/
+	
+	public int charge(int time) {
+		int result = getBatterySize();
+		result += time*8;
+		setBatterySize(result);
+		return getBatterySize();
+	}
+}

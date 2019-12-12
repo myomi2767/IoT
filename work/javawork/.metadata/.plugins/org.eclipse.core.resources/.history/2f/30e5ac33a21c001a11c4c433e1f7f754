@@ -1,0 +1,12 @@
+package oop.cahp07;
+
+public class CheckingAccount extends Account {
+	private String cardNo;
+	public CheckingAccount() {
+		
+	}
+	public CheckingAccount(String account,String ownerName, int balance,String cardNo) {
+		super(account, ownerName, balance);
+		
+	}
+}

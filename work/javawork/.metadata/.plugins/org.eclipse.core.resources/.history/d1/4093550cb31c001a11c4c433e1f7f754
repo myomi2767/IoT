@@ -1,0 +1,18 @@
+package workbook;
+
+public class Otab extends Mobile{
+	Otab(){
+		
+	}
+	Otab(String mobileName, int batterySize, String osType){
+		super(mobileName,batterySize,osType);
+	}
+	public int operate(int time) {
+		int result = 0;
+		return result;
+	}
+	public int charge(int time) {
+		int result = 0;
+		return result;
+	}
+}

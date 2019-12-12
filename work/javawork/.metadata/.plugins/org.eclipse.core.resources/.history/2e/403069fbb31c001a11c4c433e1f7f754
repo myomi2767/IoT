@@ -1,0 +1,13 @@
+package workbook;
+
+public class MobileTest {
+	public static void main(String[] args) {
+		Mobile m1 = new Mobile("Ltab", 500, "AP-01");
+		Mobile m2 = new Mobile("Otab", 1000, "AND0-20");
+		
+		System.out.println("Mobile\tBattery\tOS\t");
+		System.out.println(m1.getMobileName()+"\t"+m1.getBatterySize()+"\t"+m1.getOsType());
+		System.out.println(m2.getMobileName()+"\t"+m2.getBatterySize()+"\t"+m2.getOsType());
+	}
+
+}

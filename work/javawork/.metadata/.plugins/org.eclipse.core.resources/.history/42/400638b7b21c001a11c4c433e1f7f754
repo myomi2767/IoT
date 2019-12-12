@@ -1,0 +1,25 @@
+package workbook;
+
+public class Mobile {
+	private String mobileName;
+	private int batterySize;
+	private String osType;
+	
+	public Mobile() {
+		
+	}
+	public Mobile(String mobileName, int batterySize, String osType) {
+		this.mobileName = mobileName;
+		this.batterySize = batterySize;
+		this.osType = osType;
+	}
+	
+	public int operate(int time) {
+		int result = 0;
+		return result;
+	}
+	public int charge(int time) {
+		int result = 0;
+		return result;
+	}
+}

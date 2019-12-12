@@ -1,0 +1,32 @@
+package workbook;
+
+public class MobileTest {
+	public static void main(String[] args) {
+		Mobile m1 = new Mobile("Ltab", 500, "AP-01");
+		Mobile m2 = new Mobile("Otab", 1000, "AND0-20");
+		
+		System.out.println("Mobile\t\tBattery\t\tOS");
+		System.out.println("--------------------------------------------------");
+		System.out.println(m1.getMobileName()+"\t\t"+m1.getBatterySize()+"\t\t"+m1.getOsType());
+		System.out.println(m2.getMobileName()+"\t\t"+m2.getBatterySize()+"\t\t"+m2.getOsType());
+		
+		m1.charge(10);
+		m2.charge(10);
+		
+		System.out.println("10분 충전");
+		System.out.println("Mobile\t\tBattery\t\tOS");
+		System.out.println("--------------------------------------------------");
+		System.out.println(m1.getMobileName()+"\t\t"+m1.getBatterySize()+"\t\t"+m1.getOsType());
+		System.out.println(m2.getMobileName()+"\t\t"+m2.getBatterySize()+"\t\t"+m2.getOsType());
+		
+		m1.operate(5);
+		m2.operate(5);
+		
+		System.out.println("5분 통화");
+		System.out.println("Mobile\t\tBattery\t\tOS");
+		System.out.println("--------------------------------------------------");
+		System.out.println(m1.getMobileName()+"\t\t"+m1.getBatterySize()+"\t\t"+m1.getOsType());
+		System.out.println(m2.getMobileName()+"\t\t"+m2.getBatterySize()+"\t\t"+m2.getOsType());
+	}
+
+}
