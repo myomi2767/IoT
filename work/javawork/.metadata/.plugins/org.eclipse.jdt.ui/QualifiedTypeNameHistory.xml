@@ -17,4 +17,9 @@
 <fullyQualifiedTypeName name="oop.chap06.CallByTest"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="workbook.Student02"/>
+<fullyQualifiedTypeName name="oop.cahp07.Teacher"/>
+<fullyQualifiedTypeName name="oop.cahp07.SuperA"/>
+<fullyQualifiedTypeName name="oop.cahp07.SubA"/>
+<fullyQualifiedTypeName name="oop.cahp07.CheckingAccount"/>
+<fullyQualifiedTypeName name="workbook.Mobile"/>
 </qualifiedTypeNameHistroy>
