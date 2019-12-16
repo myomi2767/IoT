@@ -2,7 +2,6 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="java.net.SocketTimeoutException"/>
 <fullyQualifiedTypeName name="oop.chap06.Person"/>
 <fullyQualifiedTypeName name="oop.chap06.MyMethod"/>
 <fullyQualifiedTypeName name="workbook.Calc"/>
@@ -15,13 +14,13 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="oop.cahp07.StaticDemo"/>
 <fullyQualifiedTypeName name="oop.chap06.CallByTest"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="workbook.Student02"/>
 <fullyQualifiedTypeName name="oop.cahp07.Teacher"/>
 <fullyQualifiedTypeName name="oop.cahp07.SuperA"/>
 <fullyQualifiedTypeName name="oop.cahp07.SubA"/>
 <fullyQualifiedTypeName name="oop.cahp07.CheckingAccount"/>
 <fullyQualifiedTypeName name="workbook.Mobile"/>
+<<<<<<< HEAD
 <fullyQualifiedTypeName name="oop.chap07.IceCream"/>
 <fullyQualifiedTypeName name="oop.chap07.FinalSuper"/>
 <fullyQualifiedTypeName name="oop.chap07.FinalSub"/>
@@ -51,4 +50,12 @@
 <fullyQualifiedTypeName name="java.lang.ArithmeticException"/>
 <fullyQualifiedTypeName name="java.util.InputMismatchException"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
+=======
+<fullyQualifiedTypeName name="java.net.SocketTimeoutException"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="workbookHome.Calculator"/>
+<fullyQualifiedTypeName name="workbookHome.Evaluation"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="workbookHome.Department"/>
+>>>>>>> ad6456acab85d87d898c8474fe8844f6c10ea786
 </qualifiedTypeNameHistroy>
