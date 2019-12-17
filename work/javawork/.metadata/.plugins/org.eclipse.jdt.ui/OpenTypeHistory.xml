@@ -1,11 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=basicJava/src&lt;workbook{Shape.java[Shape" modifiers="1025" timestamp="1576462690008"/>
-<typeInfo handle="=basicJava/src&lt;workbook{Resize.java[Resize" modifiers="513" timestamp="1576469613952"/>
-<typeInfo handle="=basicJava/C:\/Program Files\/Java\/jdk1.8.0_221\/jre\/lib\/rt.jar&lt;javax.swing(JTable$Resizable2.class[Resizable2" modifiers="1546" timestamp="1575251199283"/>
-<typeInfo handle="=basicJava/src&lt;workbook{Car.java[Car" modifiers="1025" timestamp="1576475184067"/>
-<typeInfo handle="=basicJava/src&lt;workbook{Temp.java[Temp" modifiers="513" timestamp="1576474562111"/>
-<typeInfo handle="=basicJava/src&lt;workbook{Shape02.java[Shape02" modifiers="1025" timestamp="1576479488178"/>
-<typeInfo handle="=basicJava/src&lt;workbook{Movable.java[Movable" modifiers="513" timestamp="1576477489180"/>
-<typeInfo handle="=basicJava/C:\/Program Files\/Java\/jdk1.8.0_221\/jre\/lib\/rt.jar&lt;java.awt.event(MouseMotionListener.class[MouseMotionListener" modifiers="1537" timestamp="1575251199283"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>
