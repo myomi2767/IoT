@@ -23,8 +23,9 @@ public class InsertTest {
 			System.out.println("SQL을 실행하기 위한 객체정보:"+stmt);
 			
 			//4. SQL실행하기
-			stmt.executeUpdate(sql);
-			System.out.println("삽입성공");
+			int result = stmt.executeUpdate(sql);
+			//5. 결과 처리하기
+			System.out.println(result+"개 행 삽입성공");
 		} catch(ClassNotFoundException e) {
 			System.out.println("드라이버로딩 실패");
 		} catch(SQLException e) {
