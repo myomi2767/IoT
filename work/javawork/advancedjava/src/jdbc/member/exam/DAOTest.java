@@ -10,12 +10,13 @@ public class DAOTest {
 		System.out.println("3. 사원수정");
 		System.out.println("4. 사원퇴사");
 		System.out.println("5. 주소로 사원 검색");
+		System.out.println("6. 로그인");
 		System.out.print("원하는 작업을 선택하세요:");
 		int choice  = key.nextInt();
 		show(choice);
 	}
 	public static void show(int choice){
-		MenuUI02 ui = new MenuUI02();
+		MenuUI ui = new MenuUI();
 		switch(choice){
 			case 1:
 				ui.insertMenu();
@@ -32,6 +33,9 @@ public class DAOTest {
 			case 5:
 				ui.findByAddrMenu();
 				break;
+			case 6:
+				ui.loginMenu(); //MenuUI에 추가
+				break;			//로그인 성공, 실패 출력하기
 		}
 	}
 }

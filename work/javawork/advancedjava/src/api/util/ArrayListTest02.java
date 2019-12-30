@@ -1,7 +1,6 @@
 package api.util;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 //collection에 저장할 요소의 타입을 generic형태로 정의한다.
 //Collection클래스<데이터타입>;
 //	|_ ArrayList<String>;
