@@ -1,0 +1,25 @@
+@charset "EUC-KR";
+body{
+	font-size: 9pt;
+}
+h1 {
+	color: #5da5a9;
+}
+#mycolor{
+	background-color: #a7cece;
+	background-image: url("../../images/background.gif");
+	background-repeat: no-repeat;
+	border:solid white 1px;
+	padding-left: 90px;
+	height: 100px;
+	margin: 20px;
+	font-style: italic;
+	border-radius: 20px;
+	overflow: auto;
+}
+#outer{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;	/* 해상도가 다름에 따른 비율을 조절할 수 있는 용도 'auto' */
+	text-align: justify;
+}
