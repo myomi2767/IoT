@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		today = new Date();
+		document.write("<h2>"+today+"</h2>");
+		dday= new Date();
+		dday.setMonth(1);
+		dday.setDate(3);
+		document.write("<h2>"+dday+"</h2>");
+		time1 = today.getTime();
+		time2 = dday.getTime();
+		//날짜데이터의 연산은 millisecond로 변환하여 연산 - java도 동일
+		document.write("<h2>"+time1+","+time2+"</h2>");
+		document.write("<h2>"+Math.ceil((time2-time1)/(1000*3600*24))+"</h2>");
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function sell(){
+			count = shop.count.value;
+			document.getElementById("result").innerHTML = (count*12900*0.9);
+		}
+	</script>
+</head>
+<body>
+	<form name="shop">
+		수량:<input type="text" name="count" onkeyup="sell()">
+		<span id="result"></span>
+	</form>
+	
+</body>
+</html>
