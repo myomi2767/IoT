@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
+	
+</head>
+<body>
+	<form name="myform">
+		<table border="1" width="800">
+			<tr>
+				<td><input type="checkbox" name="allchk" onclick="allChk()"/>항목명</td>
+				<td>상품정보</td>
+				<td>수량</td>
+				<td>판매가</td>
+				<td>구매예정가</td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="calc()"/>완도미역</td>
+				<td><img src="../images/pro1.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="calc()"/></td>
+				<td>
+				<input type="text" name="price" value="6900"/><span>원</span></td>
+				<td><span class="calcprice"></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" name="prd" onclick="calc()"/>스카트 빨아쓰는 휴지</td>
+				<td><img src="../images/pro2.jpg"/></td>
+				<td><input type="text" name="count" value="1" onkeyup="calc()"/></td>
+				<td><input type="text" name="price" value="7800"/><span>원</span></td>
+				<td><span class="calcprice"></span><span>원</span></td>
+			</tr>
+			<tr>
+				<td colspan="6" align="right"><span id="totalprice"></span><span>원</span></td>
+			</tr>
+		</table>
+	</form>
+	<script type="text/javascript">
+		/* 1. 전체 체크를 선택하면 모든 항목이 체크/해제
+		   2. 전체 체크가 되면 수량과 판매가를 계산해서 구매 예정가에 출력
+		   3. 각각의 체크를 선택/해제했을 때 구매예정가가 변경되도록
+		   4. totalPrice출력하기
+		 */
+		mycheck = myform.prd;
+		//모두선택 체크박스가 선택되는 경우 호출할 함수
+		function allChk(){
+			 //각 상품별 체크박스
+			allChkVal = myform.allchk.checked; //전체선택 체크박스
+			for(i=0;i<mycheck.length;i++){
+				mycheck[i].checked = allChkVal;
+			}
+			calc();
+		}
+		//각각의 체크박스를 선택/해제하거나 수량을 변경했을 때 호출할 함수
+		function calc(){
+			mycheck = myform.prd; //체크박스
+			countArr = myform.count; //수량
+			priceArr = myform.price; //가격
+			calcpriceArr = document.getElementsByClassName("calcprice") //계산금액추가할<span>
+			result = 0;
+			totalPrice = 0;
+			//체크박스의 갯수만큼 for문을 실행하면서 체크된 체크박스에 대해서 계산
+			for(i=0;i<mycheck.length;i++){
+				if(mycheck[i].checked){
+					//계산해서 작업 중인 mycheck의 index와 같은 index를 갖고 있는 calcpriceArr요소에 출력하기
+					result = parseInt(countArr[i].value) * parseInt(priceArr[i].value);
+					calcpriceArr[i].innerHTML = result;
+					//totalPrice에 누적
+					totalPrice += result;
+				}else{
+					calcpriceArr[i].innerHTML = "";
+				}
+			}
+			document.getElementById("totalprice").innerHTML = totalPrice;
+		}
+		
+	</script>
+</body>
+</html>
