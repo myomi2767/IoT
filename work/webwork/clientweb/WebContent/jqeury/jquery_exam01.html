@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 
 <html>
-	<head>
-		<title>jquery</title> 
-	</head> 
-	<body>
-		<div id="header">
-			<h2>아침고요수목원~</h2>
+<head>
+<title>jquery</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../common/css/my_style2.css">
+</head>
+<body>
+	<div id="header">
+		<h2>아침고요수목원~</h2>
+	</div>
+	<div id="main">
+		<div class="gardenimg">
+			<img src="../images/m_garden01.jpg" />
 		</div>
-		<div id="main">
-			<div class="gardenimg"><img src="../images/m_garden01.jpg" /></div>
-			<div class="gardenimg"><img src="../images/m_garden02.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden03.jpg"/></div>
-			<div class="gardenimg"><img src="../images/m_garden05.jpg"/></div>
+		<div class="gardenimg">
+			<img src="../images/m_garden02.jpg" />
 		</div>
-		
-		<script>
-		
-		</script>
-	</body>
+		<div class="gardenimg">
+			<img src="../images/m_garden03.jpg" />
+		</div>
+		<div class="gardenimg">
+			<img src="../images/m_garden05.jpg" />
+		</div>
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			$(".gardenimg").on("mouseover", function() {
+				$(".gardenimg p").remove();
+				count = Math.floor(500+Math.random()*10);
+				mycontent = $("<p>방문자수: "+count+" </p>");
+				$(this).append(mycontent);
+			});
+		});
+	</script>
+</body>
 </html>
 
 
