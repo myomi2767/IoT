@@ -36,7 +36,6 @@
 <fullyQualifiedTypeName name="jdbc.member.exam.MemberDAO"/>
 <fullyQualifiedTypeName name="jdbc.member.exam.MemberDAOImpl"/>
 <fullyQualifiedTypeName name="java.util.Vector"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.sql.Date"/>
 <fullyQualifiedTypeName name="jdbc.member.exam.CustomerDAO"/>
 <fullyQualifiedTypeName name="jdbc.member.exam.CustomerDTO"/>
@@ -48,4 +47,8 @@
 <fullyQualifiedTypeName name="jdbc.board.exam.DBUtil"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="jdbc.member.exam.MemberDTO"/>
+<fullyQualifiedTypeName name="javax.swing.text.html.HTMLDocument.Iterator"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
 </qualifiedTypeNameHistroy>
