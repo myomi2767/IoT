@@ -188,9 +188,67 @@
 
 2. post방식으로 요청
 
-3. 
 
 ## ③ 클라이언트가 전달하는 요청 메시지에서 클라이언트의 입력 정보 추출하기
+
+1.  요청
+
+   [요청객체]
+
+   ServletRequest
+
+   ​			^
+
+   ​			|
+
+   HttpServletRequest
+
+   > 클라이언트가 요청 메시지를 서버로 전달하면 여러 가지 클라이언트의 정보가(클라이언트가 입력한 데이터, 쿠키, 세션정보, 클라이언트의 ip, port....) 서버로 전달된다.
+   >
+   > 서버는 이 데이터를 가지고 요청객체(요청객체를 만들면서 전달받은 데이터를 요청객체에 셋팅하는 작업을 수행한다.)를 생성한다.
+   >
+   > http프로토콜에 특화된 내용은 => HttpServletRequest에서 찾는다.
+   >
+   > 일반적인 내용 => ServletRequest
+   
+2.   요청정보 추출
+
+    ```html
+    ~~~~/serverweb/login.do?id=lee&pass=1234
+    						-- ---
+    				  파라미터명  파라미터value
+    ```
+
+    1.  getParameter
+
+        > ServletRequest의 메소드로 메소드를 호출하며 전달한 name에 대한 value를 리턴
+        >
+        > 리턴값 : String으로 <u>**파라미터의 값**</u>
+        >
+        > ​									ㄴ 주소표지술에 직접 넘긴 value =의 오른쪽에 있는 문자열 
+        >
+        > ​										 form태그를 이용해서 사용자가 직접 입력한 값
+        >
+        > 매개변수 : String으로 <u>**파라미터 이름**</u>
+        >
+        > ​										ㄴ 주소표시줄에 직접 넘긴 name으로 =의 왼쪽에 있는 문자열
+        >
+        > ​											  양식태그를 정의할 때 name속성에 정의한 값
+        >
+        > ```html
+        > 					<input type="text" name="id">
+        > 											 --- 파라미터 명
+        > ```
+        >
+        > 
+
+    2.  getParameterValues
+
+        > ServletRequest의 메소드로 파라미터명이 같은 모든 value를 모아서 String[]로 리턴
+        >
+        > * CheckBox, List에서 복수 개 선택, 임의로 동일한 이름을 정의해서 넘긴 데이터
+        > * 리턴타입 : String[]로 파라미터의 값들
+        > * 매개변수 : String으로 파라미터명을 정의
 
 ## ④ DB연동
 
