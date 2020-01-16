@@ -15,14 +15,14 @@ public class PostFormServlet extends HttpServlet{
 		System.out.println("---------");
 		
 		String userId = req.getParameter("userId");
-		String name = req.getParameter("userName");
+		String userName = req.getParameter("userName");
 		String passwd = req.getParameter("passwd");
 		String gender = req.getParameter("gender");
 		String job = req.getParameter("job");
 		String[] favorites = req.getParameterValues("item");
 		
 		System.out.println("아이디: "+userId);
-		System.out.println("이름: "+name);
+		System.out.println("이름: "+userName);
 		System.out.println("패스워드: "+passwd);
 		System.out.println("성별: "+gender);
 		System.out.println("직업: "+job);
