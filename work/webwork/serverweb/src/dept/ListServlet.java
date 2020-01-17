@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +23,7 @@ public class ListServlet extends HttpServlet {
 		DeptDAO dao = new DeptDAO();
 		
 		deptlist = dao.getDeptList();
-		pw.print("<h1>부서목록</h1>");
+		/*pw.print("<h1>부서목록</h1>");
 		pw.print("<hr/>");
 		pw.print("<table border='1px'>");
 		pw.print("<tr>");
@@ -41,7 +42,7 @@ public class ListServlet extends HttpServlet {
 					+"<td><a href='/serverweb/dept/delete.do?deptno="
 					+dept.getDeptNo()+"&info=test'>삭제</a></td>");
 			pw.print("</tr>");
-		}
+		}*/
 		/*for (DeptDTO deptDTO : deptlist) {
 			pw.print("<tr>");
 			pw.print("<td>"+deptDTO.getDeptNo()+"</td>"
@@ -51,7 +52,12 @@ public class ListServlet extends HttpServlet {
 					+"<td>"+deptDTO.getMgr()+"</td>");
 			pw.print("</tr>");
 		}*/
-		pw.print("</table>");
+		//pw.print("</table>");
+		//3. 데이터공유
+		request.setAttribute("list", deptlist);
+		//4. 요청재지정
+		RequestDispatcher rd = request.getRequestDispatcher("/dept/list.jsp");
+		rd.forward(request, response);
 		
 	}
 
