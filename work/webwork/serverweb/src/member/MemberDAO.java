@@ -1,4 +1,4 @@
-package dept;
+package member;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,48 +8,49 @@ import java.util.ArrayList;
 
 import fw.DBUtil;
 
-public class DeptDAO {
-	//전체목록 출력
-	public ArrayList<DeptDTO> getDeptList(){
+public class MemberDAO {
+	public ArrayList<MemberDTO> getMemberList(){
 		System.out.println("getDeptList호출=> 서블릿이 넘겨준 파라미터출력");
-		ArrayList<DeptDTO> deptlist = new ArrayList<DeptDTO>();
-		DeptDTO dept = null;
+		ArrayList<MemberDTO> memblist = new ArrayList<MemberDTO>();
+		MemberDTO memb = null;
 		Connection con = null;
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
-		String sql = "select * from mydept";
+		String sql = "select * from member";
 		try {
 			con = DBUtil.getConnect();
 			stmt = con.prepareStatement(sql);
 			rs = stmt.executeQuery();
 			while(rs.next()) {
-				dept = new DeptDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
-						rs.getString(4), rs.getString(5));
-				deptlist.add(dept);
+				memb = new MemberDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
+				memblist.add(memb);
 			}
-			System.out.println("dao=>"+deptlist.size());
+			System.out.println("dao=>"+memblist.size());
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}finally {
 			DBUtil.close(rs, stmt, con);
 		}
-		return deptlist;
+		return memblist;
 	}
 	//부서등록
-	public int insert(DeptDTO dept) {
-		System.out.println(dept);
+	public int insert(MemberDTO memb) {
+		System.out.println(memb);
 		int result = 0;
 		Connection con = null;
 		PreparedStatement stmt = null;
-		String sql = "insert into MYDEPT values(?, ?, ?, ?, ?)";
+		String sql = "insert into member values(?, ?, ?, ?, ?, ?, ?)";
 		try {
 			con = DBUtil.getConnect();
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1, dept.getDeptNo());
-			stmt.setString(2, dept.getDeptName());
-			stmt.setString(3, dept.getLoc());
-			stmt.setString(4, dept.getTel());
-			stmt.setString(5, dept.getMgr());
+			stmt.setString(1, memb.getId());
+			stmt.setString(2, memb.getPass());
+			stmt.setString(3, memb.getName());
+			stmt.setString(4, memb.getPass());
+			stmt.setString(5, memb.getDeptNo());
+			stmt.setString(6, memb.getGrade());
+			stmt.setInt(7, memb.getPoint());
 			result = stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -63,7 +64,7 @@ public class DeptDAO {
 		int result = 0;
 		Connection con = null;
 		PreparedStatement stmt = null;
-		String sql = "delete from mydept where deptno=?";
+		String sql = "delete from member where id=?";
 		try {
 			con = DBUtil.getConnect();
 			stmt = con.prepareStatement(sql);
@@ -77,13 +78,13 @@ public class DeptDAO {
 		return result;
 	}
 	
-	public DeptDTO read(String deptNo) {
+	public MemberDTO read(String deptNo) {
 		System.out.println("dao의 read호출");
-		DeptDTO dept = null;
+		MemberDTO dept = null;
 		Connection con = null;
 		PreparedStatement ptmt = null;
 		ResultSet rs = null;
-		String sql = "select * from mydept where deptno=?";
+		String sql = "select * from member where id=?";
 		try {
 			con = DBUtil.getConnect();
 			ptmt = con.prepareStatement(sql);
@@ -93,8 +94,8 @@ public class DeptDAO {
 			//  - 레코드가 여러 개: DTO로 레코드를 변환하고 ArrayList에 추가
 			//  - 레코드가 한 개 : DTO로 레코드 변환
 			if(rs.next()) {
-				dept = new DeptDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
-						rs.getString(4), rs.getString(5));
+				dept = new MemberDTO(rs.getString(1), rs.getString(2), rs.getString(3), 
+						rs.getString(4), rs.getString(5), rs.getString(6), rs.getInt(7));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

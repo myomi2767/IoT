@@ -22,7 +22,7 @@
 			DeptDTO dept = deptlist.get(i);%>
 			<tr>
 				<td><%= dept.getDeptNo() %></td>
-				<td><%= dept.getDeptName() %></td>
+				<td><a href="/serverweb/dept/read.do?deptNo=<%= dept.getDeptNo() %>&info=한글데이터"><%= dept.getDeptName() %></a></td>
 				<td><%= dept.getLoc() %></td>
 				<td><%= dept.getTel() %></td>
 				<td><%= dept.getMgr() %></td>
