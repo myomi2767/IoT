@@ -23,7 +23,7 @@
 		<beans:property name="suffix" value=".jsp" />
 		<beans:property name="order" value="2"/>
 	</beans:bean>
-	
+	<!-- ============================ tiles ============================================= -->
 	<beans:bean id="tilesConfigurer" 
 		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
 		<beans:property name="definitions">
@@ -38,6 +38,24 @@
 			value="org.springframework.web.servlet.view.tiles3.TilesView"></beans:property>
 		<beans:property name="order" value="1"/>
 	</beans:bean>
+	<!-- ===================================================================================== -->
+	
+	<!-- ============================ mybatis 사용 ============================================= -->
+	<!-- 1. connection 관리를 담당하는 객체 -->
+	<beans:bean id="ds" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<beans:property name="jndiName" value="jdbc/myspring"/>
+		<beans:property name="resourceRef" value="true"/>
+	</beans:bean>
+	<!-- 2. spring에서 mybatis의 핵심클래스인 sqlSession을 사용할 수 있도록 하기 위해서 생성 -->
+	<beans:bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<beans:property name="dataSource" ref="ds"/>
+		<beans:property name="configLocation" value="/WEB-INF/config/mybatis-config.xml"/>
+	</beans:bean>
+	<!-- 3. mybatis의 핵심클래스를 등록 -->
+	<beans:bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
+		<beans:constructor-arg ref="sqlSessionFactory"/>
+	</beans:bean>
+	<!-- ===================================================================================== -->
 	
 	<context:component-scan base-package="multi" />
 	<context:component-scan base-package="main"/>
