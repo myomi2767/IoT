@@ -1,12 +1,15 @@
 package multi.erp.board;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 //Mybatis의 핵심클래스를 이용해서 DB연동을 하기 위한 DAO클래스
+//sql문 하나당 메소드 한  개를 정의
 @Repository("boardDao")
 public class BoardDAOImpl implements BoardDAO {
 	@Autowired
@@ -25,15 +28,19 @@ public class BoardDAOImpl implements BoardDAO {
 	}
 
 	@Override
-	public List<BoardVO> searchList(String search) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<BoardVO> categorySearch(String category) {
+		System.out.println("dao=>"+category);
+		List<BoardVO> list = sqlSession.selectList("multi.erp.board.categorySearch", category);
+		System.out.println("dao=>"+list.size());
+		return list;
 	}
-
+	//검색어별로 조회 - 동적SQL활용
 	@Override
 	public List<BoardVO> searchList(String tag, String search) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("tag", tag);
+		map.put("search", search);
+		return sqlSession.selectList("multi.erp.board.dynamicSearch", map);
 	}
 
 	@Override
