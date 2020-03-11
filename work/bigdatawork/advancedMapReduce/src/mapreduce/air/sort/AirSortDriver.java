@@ -38,7 +38,7 @@ public class AirSortDriver extends Configured implements Tool{
 		job.setGroupingComparatorClass(GroupKeyComparator.class);
 		job.setSortComparatorClass(CustomKeyComparator.class);
 		job.setMapOutputKeyClass(CustomKey.class);
-		job.setOutputValueClass(IntWritable.class);
+		job.setMapOutputValueClass(IntWritable.class);
 		
 		job.setInputFormatClass(TextInputFormat.class);
 		job.setOutputFormatClass(TextOutputFormat.class);
