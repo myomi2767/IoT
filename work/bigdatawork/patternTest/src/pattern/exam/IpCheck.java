@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class IpCheck {
 	public static boolean isIP(String str) {
-		String ipreg="[0-9]{1,3}+\\.[0-9]{1,3}+\\.[0-9]{1,3}+\\.[0-9]{1,3}+";
+		String ipreg="";
 		return Pattern.matches(ipreg, str);
 	}
 	public static void main(String[] args) {

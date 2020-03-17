@@ -1,0 +1,15 @@
+db.score.update({id:"song"},{$set:{history:["영업1팀", "총무", "기획실"]}})
+db.score.update({id:"jang"},{$set:{history:["전략팀", "총무", "전산"]}})
+db.score.update({id:"hong"},{$set:{history:["영업1팀", "기획실", "전산"]}})
+db.score.update({id:"song"},{$addToSet:{history:"자금부"}})
+db.score.update({id:"jang"},{$pop:{history:1}})
+db.score.update({servlet:100},{$inc:{bonus:3000}},{multi:true})
+db.score.update({id:"song"},{$push:{"lang.ms":["visual basic", "asp", ".net"]}})
+
+db.board.insert({no:1, id:"lee", title:"test", content:"test1", count:1, writedate:"20/03/16"})
+db.board.insert({no:2, id:"kang", title:"test2", content:"test2", count:1, writedate:"20/03/16"})
+db.board.insert({no:3, id:"yoo", title:"test3", content:"test3", count:1, writedate:"20/03/16"})
+db.board.insert({no:4, id:"bong", title:"test4", content:"test4", count:1, writedate:"20/03/16"})
+db.board.insert({no:5, id:"hong", title:"test5", content:"test5", count:1, writedate:"20/03/16"})
+
+db.board.update({no:2},{$push:{content:{"content":"댓글1","count1":1,"count2":0,"writedate":"20/03/16"}}})

@@ -2,6 +2,7 @@ package mapred.basic;
 
 import java.io.IOException;
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
@@ -38,4 +39,5 @@ public class WordCountMapper extends Mapper<LongWritable, Text, Text, IntWritabl
 			context.write(outputKey, outputVal);
 		}
 	}
+	
 }

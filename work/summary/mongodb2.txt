@@ -1,0 +1,17 @@
+db.score.find({},{name:1,addr:1,servlet:1,_id:0})
+db.score.find({java:{$gte:70}})
+db.score.find({bonus:{$gte:2000}},{name:1,java:1,_id:0})
+db.score.find({$or:[{dept:"인사"},{addr:"안양"},{addr:"대구"}]})
+db.score.find({$and:[{servlet:{$lte:90}},{servlet:{$gte:70}},{dept:"총무"}]})
+db.score.find({name:/^김/})
+
+db.score.find().sort({servlet:-1}).limit(1)
+db.score.find({servlet:{$nin:[null]}}).sort({servlet:1}).limit(1)
+
+db.score.find({servlet:{$exists
+
+db.score.find().sort({java:-1}).limit(7).skip(2)
+db.score.find({id:/[no]/})
+
+db.exam.aggregate([{$match:{dept:"인사"}},{$group:{_id:"인사",평균:{$avg:"$servlet"}}}])
+db.exam.aggregate([{$match:{java:{$gte:80}}},{$group:{_id:"$dept",num:{$sum:1}}},{$sort:{num:-1}}])
