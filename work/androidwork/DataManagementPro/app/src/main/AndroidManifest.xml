@@ -21,7 +21,8 @@
         <activity android:name=".permission.RuntimePermissionTest" />
         <activity android:name=".permission.BasicPermissionTest" />
         <activity android:name=".permission.UseCustomPermission" />
-        <activity android:name=".filesystem.FileExam">
+        <activity android:name=".sqlite.exam.ReadActivity"/>
+        <activity android:name=".sqlite.exam.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
