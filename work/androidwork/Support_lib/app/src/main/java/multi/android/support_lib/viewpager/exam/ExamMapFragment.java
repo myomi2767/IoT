@@ -1,4 +1,4 @@
-package multi.android.support_lib.fragment;
+package multi.android.support_lib.viewpager.exam;
 
 import android.os.Bundle;
 
@@ -8,14 +8,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.maps.MapFragment;
+
 import multi.android.support_lib.R;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SecondFragment extends Fragment {
+public class ExamMapFragment extends Fragment {
 
-    public SecondFragment() {
+    public ExamMapFragment() {
         // Required empty public constructor
     }
 
@@ -24,6 +26,6 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second2, container, false);
+        return inflater.inflate(R.layout.fragment_exam_map, container, false);
     }
 }

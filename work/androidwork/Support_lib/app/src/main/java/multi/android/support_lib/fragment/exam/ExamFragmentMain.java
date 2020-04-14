@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -17,43 +18,27 @@ public class ExamFragmentMain extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_pager_main);
+        setContentView(R.layout.linear02);
 
-        Button btn1 = findViewById(R.id.button);
-        Button btn2 = findViewById(R.id.button2);
-        Button btn3 = findViewById(R.id.button3);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment("first");
-            }
-        });
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment("second");
-            }
-        });
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setFragment("third");
-            }
-        });
     }
-    public void setFragment(String name){
+    public void btn_click(View view){
+        setFragment(view.getTag().toString());
+    }
+
+    public void setFragment(String idx){
+        Log.d("fragment",idx);
         FragmentManager fragmentManager = getSupportFragmentManager();
+        //프래그먼트의 변화를 관리하는 객체
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        switch (name){
-            case "first":
+        switch (idx){
+            case "0":
                 transaction.replace(R.id.container,firstFragment);
                 break;
-            case "second":
+            case "1":
                 transaction.replace(R.id.container,secondFragment);
                 break;
-            case "third":
+            case "2":
                 transaction.replace(R.id.container,thirdFragment);
                 break;
         }
