@@ -164,4 +164,55 @@
    - work thread한테 전달받은 값으로 view를 변경
    - 쓰레드로부터 요청이 올때마다 handleMessage가 호출된다.
 
-5. 
+
+#### 2) AsyncTask를 이용
+
+> 시간이 오래 걸리는 작업도 가능, UI를 변경하는 작업도 가능
+
+1. AsyncTask를 상속받는 클래스를 정의
+
+   => AsyncTask에 제네릭을 적용해서 변수 세 개의 타입을 정의(사용자가 임의로)
+
+   - 첫번째 제네릭 : excute를 호출해서 AsyncTask를 실행할 때 필요한 매개변수 타입
+
+     ​						   이 매개변수가 doInBackground를 호출할 때 전달
+
+   - 두번째 제네릭 : publishProgress의 매개변수 타입
+
+     ​						   publishProgress가 호출할 onProgressUpdate의 매개변수
+
+     ​						   즉, doInbackground메소드 내부에서 발생되는 값들로 화면에 출력되기 위해 필요한 값
+
+   - 세번째 제네릭 : doInbackground가 종료되고 리턴되는 값의 타입
+
+     ​					doInbackground가 종료되면 자동으로 `onPostExecute` 가 호출되며 매개변수로 전달된다.
+
+2. 메소드를 오버라이딩
+
+   - **`onPreExecute`** : `doInBackground` 메소드가 호출되기 전에 실행되는 메소드
+     - 일반 쓰레드로 처리할 일들(`doInBackground` 에서 처리되는 작업)이 실행되기 전에 사전작업을 해야하는 경우 구현
+     - 메인쓰레드(UI쓰레드)에서 호출되는 메소드이므로 화면처리가능
+     - UI쓰레드에서 호출하기 때문에 시간이 오래 걸리는 작업을 하면 안된다.
+
+   - **`doInBackground`** : Background에서 실행될 작업을 정의
+
+     - 일반 쓰레드에서 run메소드에 정의했던 코드를 구현
+     - 네트워크 처리, 시간이 오래걸리는 작업을 여기서 처리
+     - 화면관련 처리는 할 수 없다.
+
+     => 매개변수가 가변형이고 배열로 처리
+
+   - **`onProgressUpdate`** : `doInBackground` 가 실행되는 중에 UI를 변경해야 할 일이 있는 경우에 호출되는 메소드
+
+     - `doInBackground` 내부에서 화면을 변경해야 할 일이 생기면 publicshProgress메소드를 호출하면 자동으로 `onProgressUpdate` 가 호출된다.
+     - UI쓰레드에서 호출하기 때문에 시간이 오래 걸리는 작업을 하면 안된다.
+
+   - **`onCancelled`** : 작업이 취소되는 경우 호출되는 메소드
+
+   - **`onPostExecute`** : `doInBackground` 메소드의 처리가 끝나면 호출되는 메소드
+
+     - UI쓰레드에서 호출하기 때문에 시간이 오래 걸리는 작업을 하면 안된다.(뷰를 변경할 수 있다.)
+
+3. AsyncTask의 하위객체를 생성
+4. 생성된 AsyckTask를 실행
+   - AsyckTask의 excute메소드를 호출

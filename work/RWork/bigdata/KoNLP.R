@@ -45,18 +45,31 @@ head(data_list,20)
 #          x[1]
 #        } # 반복해서 적용할 함수
 #        )
+class(data_list)
+#리스트를 unlist로 변환
+class(unlist(data_list))
 
-wordlist <- sapply(str_split(data_list,"/"), function(x){
+wordlist <- sapply(str_split(unlist(data_list),"/"), function(x){
                                             x[1]
                                         })
+class(wordlist)
+head(wordlist, 20)
+head(data_list, 20)
 
+#table함수를 이용해서 단어의 빈도수를 구하기
+#table함수는 벡터에 저장되어 있는 모든 단어들의 빈도수를 계산해서 변환
+# - 단어를 이용해서 변수명으로 사용
+tablewordlist <- table(wordlist)
+tablewordlist[1]
+tablewordlist[89]
+names(tablewordlist)
 
-
-
-
-
-
-
-
+#분석한 데이터를 이용해서 sort
+sort(tablewordlist,decreasing = T)[1:100]
+#분석결과를 가지고 기준을 적용해서 정리 - 한 글자를 빼고
+nchar("글자수")
+tablewordlist_result <- tablewordlist[nchar(names(tablewordlist))>1]
+tablewordlist_result <- sort(tablewordlist_result,decreasing = T)[1:100]
+tablewordlist_result
 
 

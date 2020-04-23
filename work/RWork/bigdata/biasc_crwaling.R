@@ -28,7 +28,7 @@ title
 ####데이터 필터링:hit####
 hit_data <- url_data[str_detect(url_data,"<span class=\"hit\">")]
 hit_data
-hit <- str_extract(hit_data,"(?<=\">).*(?=</span>)")
+hit <- str_extract(hit_data,"(?<=\">).*(?=</span>)")[-1]
 t(t(hit))
 
 ####데이터 필터링:url####
