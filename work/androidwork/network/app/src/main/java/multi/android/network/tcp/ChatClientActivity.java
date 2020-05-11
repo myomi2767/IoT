@@ -89,6 +89,13 @@ public class ChatClientActivity extends AppCompatActivity {
     }
     public void sendMessage(final String message) {
         //메시지를 서버에 전송할 수 있도록 작성하세요
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                pw.println(message);
+                pw.flush();
+            }
+        }).start();
 
     }
 
@@ -110,13 +117,13 @@ public class ChatClientActivity extends AppCompatActivity {
         protected String doInBackground(Integer... integers) {
            //서버와 접속하여 서버가 보내오는 메시지를 읽을 수 있도록 작성하세요
             try {
-                socket = new Socket("70.12.116.86", 12345);
+                socket = new Socket("172.30.1.48", 12345);
 
                 if(socket!=null) {
                     ioWork();
                 }
                 //서버한테 nickname보내기
-                sendMessage(nickname);
+                sendMsg(nickname);
                 userlist.add(nickname);
 
                 Thread receiveThread = new Thread(new Runnable() {
@@ -126,9 +133,8 @@ public class ChatClientActivity extends AppCompatActivity {
                             try {
                                 String msg = "";
                                 msg = br.readLine();
-                                System.out.println("서버가 전달한 메시지>>"+msg);
+                                Log.d("chat","서버가 전달한 메시지>>"+msg);
                                 filteringMsg(msg);
-                                publishProgress();
                             } catch (IOException e) {
                                 //e.printStackTrace();
                                 try {
@@ -182,19 +188,19 @@ public class ChatClientActivity extends AppCompatActivity {
             if(protocol.equals("new")){
                 userlist.add(message);
 				//내용을 추가하세요.
-                useradapter.add(userlist);
-                user_listview.setAdapter(useradapter);
+                publishProgress("new","========="+message+"님이 입장했습니다.==========");
             }else if(protocol.equals("old")){
                 userlist.add(message);
 				 //내용을 추가하세요.
-                useradapter.add(userlist);
-                user_listview.setAdapter(useradapter);
+                publishProgress("old");
             }else if(protocol.equals("chatting")){
                 String nickname = token.nextToken();
                //내용을 추가하세요.
+                publishProgress("chatting",nickname,message);
             }else if(protocol.equals("out")){
                 userlist.remove(message);
               //내용을 추가하세요.
+                publishProgress("out","========="+message+"님이 퇴장했습니다.==========");
             }
 
         }
@@ -202,6 +208,22 @@ public class ChatClientActivity extends AppCompatActivity {
         @Override
         protected void onProgressUpdate(String... values) {
            //코드를 추가하세요
+            String state = values[0];
+            switch (state){
+                case "new":
+                case "out":
+                    useradapter.notifyDataSetChanged();
+                    msg.add(values[1]);
+                    msgadapter.notifyDataSetChanged();
+                    break;
+                case "old":
+                    useradapter.notifyDataSetChanged();
+                    break;
+                case "chatting":
+                    msg.add(values[1]+":"+values[2]);
+                    msgadapter.notifyDataSetChanged();
+                    break;
+            }
         }
     }
 

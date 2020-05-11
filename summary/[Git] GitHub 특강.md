@@ -9,6 +9,9 @@
 >| 백엔드 개발자를 꿈꾸는 학생개발자에게           | [링크](https://d2.naver.com/news/3435170)                    |
 >| 좋은 git 커밋 메시지를 작성하기 위한 7가지 약속 | [링크](https://meetup.toast.com/posts/106)                   |
 >| git 책                                          | [링크](https://git-scm.com/book/ko/v2)                       |
+>| 마크다운 이모지                                 | [링크](https://gist.github.com/rxaviers/7360908)             |
+>| fontawesome                                     |                                                              |
+>|                                                 |                                                              |
 
 ## Git
 

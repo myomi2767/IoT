@@ -14,7 +14,7 @@
         <activity android:name=".actionbar.SubActivity" />
         <activity android:name=".tab.TabTest" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".appbar.AppbarTest">
+        <activity android:name=".tab.TabTest2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
