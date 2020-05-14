@@ -1,0 +1,48 @@
+package led;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ServerLED {
+	InputStream is;
+    InputStreamReader isr;
+    BufferedReader br;
+    
+    Socket socket;
+    ServerSocket server;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public void serverStart(int port) {
+		try {
+			server = new ServerSocket(port);
+			if(server!=null) {
+				connection();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void connection() {
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while(true) {
+					try {
+						socket = server.accept();
+						String ip = socket.getInetAddress().getHostAddress();
+						
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}//end while
+			}
+		});
+		thread.start();
+	}
+}

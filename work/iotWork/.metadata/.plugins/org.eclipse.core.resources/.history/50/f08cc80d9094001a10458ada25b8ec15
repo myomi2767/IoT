@@ -1,0 +1,67 @@
+package basic;
+//키보드로 입력하는 값을 아두이노로 내보내기 위한 쓰레드 - Serial
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class SerialArduinoWriterThread extends Thread{
+	InputStream is;
+    InputStreamReader isr;
+    BufferedReader br;
+    
+    Socket socket;
+    ServerSocket server;
+	
+	OutputStream out;
+	int llled;
+	public SerialArduinoWriterThread(OutputStream out) {
+		super();
+		this.out = out;
+	}
+	public void run() {
+		int ledstate=llled;
+		try {
+			while(true) {
+				out.write(ledstate);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	public void serverStart(int port) {
+		try {
+			server = new ServerSocket(port);
+			if(server!=null) {
+				connection();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void connection() {
+		Thread thread = new Thread(new Runnable() {
+			@Override
+			public void run() {
+				while(true) {
+					try {
+						socket = server.accept();
+						is = socket.getInputStream();
+		                
+						//String ip = socket.getInetAddress().getHostAddress();
+						llled = is.read();
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}//end while
+			}
+		});
+		thread.start();
+	}
+	
+}
